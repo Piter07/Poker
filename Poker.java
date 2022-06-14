@@ -61,8 +61,19 @@ public class Poker {
         else if(par == 1)
             return "Par";
 
-
+        this.cartaAlta();
         return "Carta Alta";
+    }
+
+    private void cartaAlta() {
+        Carta aux;
+        if (this.cartas[0].valorNum == 1) {
+            aux = cartas[0];
+            cartas[0] = cartas[4];
+            cartas[4] = aux;
+        }
+
+        System.out.println("La carta Alta es: " + cartas[4].valorPalo());
     }
 
     private boolean color() {
